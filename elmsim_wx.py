@@ -1,10 +1,11 @@
 import wx
 
 class simpleapp_wx(wx.Frame):
-    def __init__(self,parent,id,title,device):
+    def __init__(self,parent,id,title,device,queue):
         wx.Frame.__init__(self,parent,id,title)
         self.parent = parent
         self.device=device
+        self.returnQueue=queue
         self.initialize()
 
     def initialize(self):

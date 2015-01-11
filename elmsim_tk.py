@@ -1,115 +1,48 @@
 #!/usr/bin/python
 # -*- coding: iso-8859-1 -*-
 
+from Tkinter import *
 import Tkinter
+from ttk import *
+from testTab1 import testTab1
+from testTab2 import testTab2
+from engineTab import engineTab
+import Queue
 
 class simpleapp_tk(Tkinter.Tk):
-    def __init__(self,parent,device):
+    #def __init__(self,parent,device,queue):
+    def __init__(self,parent,device,queue):
         Tkinter.Tk.__init__(self,parent)
         self.device=device
         self.parent = parent
+        self.returnQueue=queue
         self.initialize()
 
     def initialize(self):
-        self.grid()
+        master = Frame(self.parent, name='master')
+        master.pack(fill=BOTH,expand=True)
+        self.notebook = Notebook(master, name='nb')
+        self.notebook.pack(fill=BOTH,expand=True)
 
-        currentColumn=0
-        currentRow=0
-        speedLabel = Tkinter.Label(self, text='Speed', fg="white",bg="blue")
-        speedLabel.grid(column=0,row=currentRow,sticky='EW')
-        rpmLabel = Tkinter.Label(self, text='RPM', fg="white",bg="blue")
-        rpmLabel.grid(column=1,row=currentRow,sticky='EW')
-        tempLabel = Tkinter.Label(self, text='Temp', fg="white",bg="blue")
-        tempLabel.grid(column=2,row=currentRow,sticky='EW')
+        self.engineTab = engineTab(self.notebook, self.device, name='engineTab')
+        self.notebook.add(self.engineTab, text="Engine")
 
-        currentRow=currentRow+1
-        self.speedValue=0
-        self.speedScale = Tkinter.Scale(from_=0,to=200, orient=Tkinter.VERTICAL,
-            command=self.OnSpeedChange)
-        self.speedScale.grid(column=0,row=currentRow,sticky='NS')
-        self.speedScale.bind("<ButtonRelease-1>", self.speedChanged)
-        self.rpmValue=0
-        self.rpmScale = Tkinter.Scale(from_=0,to=6000, orient=Tkinter.VERTICAL,
-            resolution=100, command=self.OnRPMChange)
-        self.rpmScale.grid(column=1,row=currentRow,sticky='NS')
-        self.rpmScale.bind("<ButtonRelease-1>", self.rpmChanged)
-        self.tempValue=0
-        self.tempScale = Tkinter.Scale(from_=0,to=200, orient=Tkinter.VERTICAL,
-            command=self.OnTempChange)
-        self.tempScale.grid(column=2,row=currentRow,sticky='NS')
-        self.tempScale.bind("<ButtonRelease-1>", self.tempChanged)
+        self.testTab1 = testTab1(self.notebook, self.device, name='Tab 1')
+        self.notebook.add(self.testTab1, text="Tab 1")
 
-        currentRow=currentRow+1
-        self.entryVariable = Tkinter.StringVar()
-        self.entry = Tkinter.Entry(self,textvariable=self.entryVariable)
-        self.entry.grid(column=1,row=currentRow,sticky='EW')
-        self.entry.bind("<Return>", self.OnPressEnter)
-        self.entryVariable.set(u"Enter text here.")
+        self.testTab2 = testTab2(self.notebook, self.device, name='secondTab')
+        self.notebook.add(self.testTab2, text="Tab 2")
 
-        button = Tkinter.Button(self,text=u"Click me !",
-                                command=self.OnButtonClick)
-        button.grid(column=2,row=currentRow)
-
-        currentRow=currentRow+1
-        self.labelVariable = Tkinter.StringVar()
-        label = Tkinter.Label(self,textvariable=self.labelVariable,
-                              anchor="w",fg="white",bg="blue")
-        label.grid(column=0,row=currentRow,columnspan=3,sticky='EW')
-        self.labelVariable.set(u"Hello !")
-
-        self.grid_columnconfigure(0,weight=1)
         self.resizable(True,True)
+        self.after(500,self.doCommand)
         self.update()
-        self.geometry(self.geometry())
-        self.entry.focus_set()
-        self.entry.selection_range(0, Tkinter.END)
 
-    def OnButtonClick(self):
-        self.labelVariable.set(self.entryVariable.get()+" (You clicked the button)")
-        print "You clicked the button !"
-        self.entry.focus_set()
-        self.entry.selection_range(0, Tkinter.END)
-        self.device.stop()
+    def doCommand(self):
+        try:
+            content=self.returnQueue.get_nowait()
+            print "return contents:",content
+        except Queue.Empty:
+            pass
+        #print "running do command"
+        self.after(500,self.doCommand)
 
-    def OnPressEnter(self,event):
-        self.labelVariable.set(self.entryVariable.get()+" (You pressed ENTER)" )
-        print "You pressed enter !"
-        source = ['entry',self.entryVariable.get()]
-        self.device.putData(source)
-        self.entry.focus_set()
-        self.entry.selection_range(0, Tkinter.END)
-
-    def OnSpeedChange(self,value):
-        #print "speed set to:",value
-        self.speedValue=value
-
-    def speedChanged(self,event):
-        print "speed set to:",self.speedValue
-
-    def OnRPMChange(self,value):
-        self.rpmValue=value
-
-    def rpmChanged(self,event):
-        print "rpm set to:",self.rpmValue
-
-    def OnTempChange(self,value):
-        self.tempValue=value
-
-    def tempChanged(self,event):
-        print "temp set to:",self.tempValue
-
-#app = simpleapp_tk(None)
-#app.title('ELM327 Simulator')
-#print "mainloop"
-#app.mainloop()
-#print "leaving tk app"
-#app.device.stop()
-#app.device.join(5)
-#device.stop()
-#device.join(5)
-#if app.device.is_alive():
-    #print "terminating elm device"
-    #app.device.terminate()
-#if device.is_alive():
-    #print "terminating elm device"
-    #device.terminate()

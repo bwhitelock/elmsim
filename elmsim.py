@@ -4,9 +4,11 @@
 #elmapp="tk"
 
 import sys
+from multiprocessing import Queue
+thisQueue=Queue()
 try:
     from elmDevice import elmDevice
-    device=elmDevice()
+    device=elmDevice(thisQueue)
     device.start()
 except ImportError:
     print "The module elmDevice can not be found"
@@ -35,7 +37,7 @@ except ImportError:
         #gui = 'tk'
         print "running tk app"
         from elmsim_tk import simpleapp_tk
-        app=simpleapp_tk(None,device)
+        app=simpleapp_tk(None,device,thisQueue)
         app.title('ELM327 Test Simulator TK')
         app.mainloop()
 else:
@@ -44,18 +46,7 @@ else:
     from elmsim_wx import simpleapp_wx
     #gui = 'wx'
     app = wx.App()
-    frame = simpleapp_wx(None,-1,'ELM327 Simulator',device)
+    frame = simpleapp_wx(None,-1,'ELM327 Simulator',device,thisQueue)
     app.MainLoop()
 
-#app=simpleapp_tk(None,device)
-#app.title('ELM327 Test Simulator TK')
-#app.mainloop()
-#if gui == 'wx':
-    #app = wx.App()
-    #frame = simpleapp_wx(None,-1,'ELM327 Simulator')
-    #app.MainLoop()
-#else:
-    #app=simpleapp_tk(None,device)
-    #app.title('ELM327 Test Simulator TK')
-    #app.mainloop()
 print "done"
