@@ -7,7 +7,7 @@ import sys
 from multiprocessing import Queue
 thisQueue=Queue()
 try:
-    from elmDevice import elmDevice
+    from elmDevice.elmDevice import elmDevice as elmDevice
     device=elmDevice(thisQueue)
     device.start()
 except ImportError:
@@ -36,17 +36,18 @@ except ImportError:
     else:
         #gui = 'tk'
         print "running tk app"
-        from elmsim_tk import simpleapp_tk
-        app=simpleapp_tk(None,device,thisQueue)
+        from tkinter.elmsim_tk import simpleapp_tk as myApp
+        #app=simpleapp_tk(None,device,thisQueue)
+        app=myApp(None,device,thisQueue)
         app.title('ELM327 Test Simulator TK')
         app.mainloop()
 else:
     print "running wx app"
     #import elmsim_wx
-    from elmsim_wx import simpleapp_wx
+    from wxpython.elmsim_wx import simpleapp_wx as myApp
     #gui = 'wx'
     app = wx.App()
-    frame = simpleapp_wx(None,-1,'ELM327 Simulator',device,thisQueue)
+    frame = myApp(None,-1,'ELM327 Simulator',device,thisQueue)
     app.MainLoop()
 
 print "done"

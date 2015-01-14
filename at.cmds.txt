@@ -1,0 +1,135 @@
+General Commands
+<CR> repeat the last command 
+BRD hh try Baud Rate Divisor hh 
+BRT hh set Baud Rate Timeout 
+D set all to Defaults 
+E0 Echo off
+E1 Echo on* 
+FE Forget Events 
+I print the version ID 
+L0 Linefeeds off
+L1 Linefeeds on 
+LP go to Low Power mode 
+M0 Memory off
+M1 Memory on 
+RD Read the stored Data 
+SD hh Save Data byte hh 
+WS Warm Start (quick software reset) 
+Z reset all 
+@1 display the device description 
+@2 display the device identifier
+@3 cccccccccccc store the @2 identifier
+
+Programmable Parameter Commands
+PP xx OFF disable Prog Parameter xx
+PP xx ON enable Prog Parameter xx
+PP FF OFF all Prog Parameters disabled
+PP FF ON all Prog Parameters enabled
+PP xx SV yy for PP xx, Set the Value to yy
+PPS print a PP Summary
+
+Voltage Reading Commands
+CV dddd Calibrate the Voltage to dd.dd volts
+CV 0000 restore CV value to factory setting
+RV Read the input Voltage
+
+Other
+IGN read the IgnMon input level
+
+
+OBD Commands
+AL Allow Long (>7 byte) messages 
+AMC display Activity Monitor Count 
+AMT hh set the Activity Mon Timeout to hh 
+AR Automatically Receive 
+AT0, 1, 2 Adaptive Timing off, auto1*, auto2 
+BD perform a Buffer Dump 
+BI Bypass the Initialization sequence 
+DP Describe the current Protocol 
+DPN Describe the Protocol by Number 
+H0 Headers off*
+H1 Headers on 
+MA Monitor All 
+MR hh Monitor for Receiver = hh 
+MT hh Monitor for Transmitter = hh 
+NL Normal Length messages* 
+PC Protocol Close 
+R0 Responses off
+R1 Responses on* 
+RA hh set the Receive Address to hh 
+S0 printing of Spaces off
+S1 printing of Spaces on* 
+SH xyz Set Header to xyz 
+SH xxyyzz Set Header to xxyyzz
+SH wwxxyyzz Set Header to wwxxyyzz
+SP h Set Protocol to h and save it
+SP Ah Set Protocol to Auto, h and save it
+SP 00 Erase stored protocol
+SR hh Set the Receive address to hh
+SS use Standard Search order (J1978)
+ST hh Set Timeout to hh x 4 msec
+TA hh set Tester Address to hh
+TP h Try Protocol h
+TP Ah Try Protocol h with Auto search
+
+J1850 Specific Commands (protocols 1 and 2)
+IFR0, 1, 2 IFRs off, auto*, or on
+IFR H, S IFR value from Header* or Source
+
+ISO Specific Commands (protocols 3 to 5)
+FI perform a Fast Initiation
+IB 10 set the ISO Baud rate to 10400*
+IB 48 set the ISO Baud rate to 4800
+IB 96 set the ISO Baud rate to 9600
+IIA hh set ISO (slow) Init Address to hh
+KW display the Key Words
+KW0 Key Word checking off
+KW1 Key Word checking on*
+SI perform a Slow (5 baud) Initiation
+SW hh Set Wakeup interval to hh x 20 msec
+SW 00 Stop sending Wakeup messages
+WM [1 - 6 bytes] set the Wakeup Message
+
+CAN Specific Commands (protocols 6 to C)
+CEA turn off CAN Extended Addressing
+CEA hh use CAN Extended Address hh
+CAF0 Automatic Formatting off
+CAF1 Automatic Formatting on*
+CF hhh set the ID Filter to hhh
+CF hhhhhhhh set the ID Filter to hhhhhhhh
+CFC0 Flow Controls off
+CFC1 Flow Controls on*
+CM hhh set the ID Mask to hhh
+CM hhhhhhhh set the ID Mask to hhhhhhhh
+CP hh set CAN Priority to hh (29 bit)
+CRA reset the Receive Address filters
+CRA hhh set CAN Receive Address to hhh
+CRA hhhhhhhh set the Rx Address to hhhhhhhh
+CS show the CAN Status counts
+CSM0 Silent Monitoring off
+CSM1 Silent Monitoring on*
+CTM1 set Timer Multiplier to 1*
+CTM5 set Timer Multiplier to 5
+D0 display of the DLC off*
+D1 display of the DLC on
+FC SM h Flow Control, Set the Mode to h
+FC SH hhh FC, Set the Header to hhh
+FC SH hhhhhhhh Set the Header to hhhhhhhh
+FC SD [1 - 5 bytes] FC, Set Data to [...]
+PB xx yy Protocol B options and baud rate
+RTR send an RTR message
+V0 use of Variable DLC off*
+V1 use of Variable DLC on
+
+J1939 CAN Specific Commands (protocols A to C)
+DM1 monitor for DM1 messages
+JE use J1939 Elm data format*
+JHF0 Header Formatting off
+JHF1 Header Formatting on*
+JS use J1939 SAE data format
+JTM1 set Timer Multiplier to 1*
+JTM5 set Timer Multiplier to 5
+MP hhhh Monitor for PGN 0hhhh
+MP hhhh n “ “ and get n messages
+MP hhhhhh Monitor for PGN hhhhhh
+MP hhhhhh n “ “ and get n messages

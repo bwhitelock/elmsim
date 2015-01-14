@@ -10,14 +10,15 @@ class testTab2(Frame):
         Frame.__init__(self, master)
         self.device=device
         self.name=name
-        #self.grid(sticky=N+W+E+S)
         self.pack(fill=BOTH,expand=True)
         twoFrame1=Frame(self)
         twoFrame1.pack(fill=BOTH,expand=True)
-        button = Tkinter.Button(twoFrame1,text=u"Click me !",
+        button = Tkinter.Button(twoFrame1,text=u"Stop Device",
                                 command=self.OnButtonClick)
-        #button.grid(column=0,row=0)
         button.pack(expand=True)
+        button2 = Tkinter.Button(twoFrame1,text=u"Start Device",
+                                command=self.OnButton2Click)
+        button2.pack(side=LEFT,expand=True)
 
         twoFrame2=Frame(self)
         twoFrame2.pack(fill=BOTH,expand=True)
@@ -25,21 +26,18 @@ class testTab2(Frame):
         label = Tkinter.Label(twoFrame2,textvariable=self.labelVariable,
                               anchor="w",fg="white",bg="blue")
         self.labelVariable.set(u"Hello !")
-        #label.grid(column=0,row=2)
         label.pack(fill=X,expand=True)
         twoFrame3=Frame(self)
         twoFrame3.pack(fill=BOTH,expand=True)
         label2 = Tkinter.Label(twoFrame3,text='testing',
                               anchor="w",fg="white",bg="blue")
         label2.pack(fill=X,expand=True)
-        #self.columnconfigure(0,weight=1)
         self.update()
 
     def OnButtonClick(self):
-        #self.labelVariable.set(self.entryVariable.get()+" (You clicked the button)")
-        print "You clicked the button !"
-        #self.entry.focus_set()
-        #self.entry.selection_range(0, Tkinter.END)
-        #self.firstTab.entry.focus_set()
-        #self.firstTab.entry.selection_range(0, Tkinter.END)
+        print "You clicked button1 !"
         self.device.stop()
+
+    def OnButton2Click(self):
+        print "You clicked button2 !"
+        self.device.listen()
