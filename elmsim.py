@@ -3,12 +3,13 @@
 
 #elmapp="tk"
 
-#from commandLineParse import *
-import commandLineParse
+from commandLineParse import *
+#import commandLineParse
 
 import sys
 from multiprocessing import Queue
 thisQueue=Queue()
+#print options.guiapp
 try:
     from elmDevice.elmDevice import elmDevice as elmDevice
     device=elmDevice(thisQueue)
@@ -24,7 +25,8 @@ total = len(sys.argv)
 #gui = 'tk'
 
 try:
-    if total > 1:
+    #print options.guiapp
+    if options.guiapp == 'tk':
         print "use tk not wx"
         raise ImportError,"don't want to use wx right now"
     import wx

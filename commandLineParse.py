@@ -6,5 +6,6 @@ parser.add_option("-f", "--file", dest="filename",
 parser.add_option("-q", "--quiet",
                   action="store_false", dest="verbose", default=True,
                   help="don't print status messages to stdout")
+parser.add_option("-g", "--gui", dest="guiapp", default='tk', action="store", type="string", help="The gui to use for user interaction.", metavar="tk|wx")
 
 (options, args) = parser.parse_args()
