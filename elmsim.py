@@ -3,6 +3,9 @@
 
 #elmapp="tk"
 
+#from commandLineParse import *
+import commandLineParse
+
 import sys
 from multiprocessing import Queue
 thisQueue=Queue()
