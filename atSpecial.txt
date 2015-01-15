@@ -1,0 +1,2 @@
+*ATWM [1 - 6 bytes] set the Wakeup Message
+*ATFC SD [1 - 5 bytes] FC, Set Data to [...]

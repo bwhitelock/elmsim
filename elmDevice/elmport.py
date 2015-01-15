@@ -4,6 +4,7 @@ from threading import Thread
 #import pty
 import os, sys, select
 import time
+from atType1 import atType1
 
 class openPort(Thread):
     def __init__ (self,parent,queue):
@@ -26,6 +27,7 @@ class openPort(Thread):
         lastLine = ""
         #ser.echo(False)
         #while True:
+        #os.write(self.master,'>')
         while not self.exit.is_set():
             #time.sleep(0.25)
             print "openPort loop"
@@ -33,52 +35,50 @@ class openPort(Thread):
                 data = ''
                 cmd = ''
                 dataSource = ''
+                response = ''
                 repeatLast=False
                 while not ((data == '\r') or (data == '\n')):
                     data=os.read(self.master,1000)
                     if data == '\r':
-                        print "cariage return"
                         if ((dataSource == '') and not(lastLine == '')):
                             dataSource=''.join(lastLine)
                             repeatLast=True
-                    elif data == '\n':
-                        print "line feed"
-                    #elif ((data.upper() == 'T') and (dataSource.upper() == 'A')):
-                        #cmd = 'AT'
-                        #dataSource = ''
-                        #print "T data:",data
                     else:
-                        print "data :",data
+                        #print "data :",data
                         dataSource += data
-                    #dataSource += data
-                    #if self.echo and (repeatLast == False):
                     if self.echo:
                         os.write(self.master,data)
+
                 if repeatLast == False:
                     lastLine=''.join(dataSource)
                 else:
                     print "repeatLast",repeatLast
                     if self.echo:
-                        #os.write(self.master,'\n')
-                        #os.write(self.master,'>')
+                        os.write(self.master,'\r')
+                        os.write(self.master,'\n')
                         os.write(self.master,dataSource)
                         os.write(self.master,'\r')
-                print "lastLine",lastLine
                 dataSource = dataSource.upper()
                 dataSource = dataSource.replace(' ','')
-                print "dataSource:",dataSource
-                #if dataSource[:2].upper() == 'AT':
                 if dataSource[:2] == 'AT':
-                    self.atcmd(dataSource)
-                #data=os.read(master)
-                os.write(self.master,'\n')
+                    print "at command"
+                    #response=self.atcmd(dataSource)
+                    if atType1.get(dataSource):
+                        print "using dict call",atType1[dataSource]
+                        response=atType1[dataSource]()
+                        #response=ResetAll()
+                        print "dict response",response
+                if not response == '':
+                    if self.echo:
+                        os.write(self.master,'\n')
+                    os.write(self.master,response)
+                    if self.echo:
+                        os.write(self.master,'\r')
+                if self.echo:
+                    os.write(self.master,'\n')
                 os.write(self.master,'>')
             except:
-                time.sleep(0.25)
-                #pass
-                #print "read failed"
-
-            #print "received data is:\n",dataSource
+                time.sleep(1)
 
     def stop(self):
         print "stopping openPort"
@@ -88,3 +88,8 @@ class openPort(Thread):
         source = ['cmd','reset']
         self.parent.putData(source)
         print "run at command on data:",data
+        if data == 'ATZ':
+            result=''
+        else:
+            result='?'
+        return result

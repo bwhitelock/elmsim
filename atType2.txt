@@ -1,0 +1,41 @@
+ATSPh Set Protocol to h and save it
+ATTPh Try Protocol h
+ATSDhh Save Data byte hh 
+ATMRhh Monitor for Receiver = hh 
+ATMThh Monitor for Transmitter = hh 
+ATRAhh set the Receive Address to hh 
+ATSPAh Set Protocol to Auto, h and save it
+ATSRhh Set the Receive address to hh
+ATSThh Set Timeout to hh x 4 msec
+ATTAhh set Tester Address to hh
+ATTPAh Try Protocol h with Auto search
+ATSWhh Set Wakeup interval to hh x 20 msec
+ATCPhh set CAN Priority to hh (29 bit)
+ATBRDhh try Baud Rate Divisor hh 
+ATBRThh set Baud Rate Timeout 
+ATAMThh set the Activity Mon Timeout to hh 
+ATSHxyz Set Header to xyz 
+ATIIAhh set ISO (slow) Init Address to hh
+ATCEAhh use CAN Extended Address hh
+ATCFhhh set the ID Filter to hhh
+ATCMhhh set the ID Mask to hhh
+ATFCSMh Flow Control, Set the Mode to h
+ATPPxxON enable Prog Parameter xx
+ATCVdddd Calibrate the Voltage to dd.dd volts
+ATCV0000 restore CV value to factory setting
+ATCRAhhh set CAN Receive Address to hhh
+ATPBxxyy Protocol B options and baud rate
+ATMPhhhh Monitor for PGN 0hhhh
+ATPPxxOFF disable Prog Parameter xx
+ATFCSHhhh FC, Set the Header to hhh
+ATMPhhhhn “ “ and get n messages
+ATPPxxSVyy for PP xx, Set the Value to yy
+ATSHxxyyzz Set Header to xxyyzz
+ATMPhhhhhh Monitor for PGN hhhhhh
+ATMPhhhhhhn “ “ and get n messages
+ATSHwwxxyyzz Set Header to wwxxyyzz
+ATCFhhhhhhhh set the ID Filter to hhhhhhhh
+ATCMhhhhhhhh set the ID Mask to hhhhhhhh
+ATCRAhhhhhhhh set the Rx Address to hhhhhhhh
+ATFCSHhhhhhhhh Set the Header to hhhhhhhh
+AT@3cccccccccccc store the @2 identifier
