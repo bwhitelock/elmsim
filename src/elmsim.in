@@ -3,11 +3,13 @@
 
 #elmapp="tk"
 
+import sys
+from multiprocessing import Queue
+sys.path.insert(1, '@ELMSIMDIR@')
+
 from commandLineParse import *
 #import commandLineParse
 
-import sys
-from multiprocessing import Queue
 thisQueue=Queue()
 #print options.guiapp
 try:
@@ -43,7 +45,10 @@ except ImportError:
         print "running tk app"
         from tkinter.elmsim_tk import simpleapp_tk as myApp
         #app=simpleapp_tk(None,device,thisQueue)
-        app=myApp(None,device,thisQueue)
+        #app=myApp(None,device,thisQueue)
+        app=myApp(device,thisQueue)
+        print "package","@PACKAGE@"
+        print "version","@VERSION@"
         app.title('ELM327 Test Simulator TK')
         app.mainloop()
 else:

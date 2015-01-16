@@ -11,15 +11,18 @@ import Queue
 
 class simpleapp_tk(Tkinter.Tk):
     #def __init__(self,parent,device,queue):
-    def __init__(self,parent,device,queue):
-        Tkinter.Tk.__init__(self,parent)
+    #def __init__(self,parent,device,queue):
+    def __init__(self,device,queue):
+        #Tkinter.Tk.__init__(self,parent)
+        Tkinter.Tk.__init__(self)
         self.device=device
-        self.parent = parent
+        ##self.parent = parent
         self.returnQueue=queue
         self.initialize()
 
     def initialize(self):
-        master = Frame(self.parent, name='master')
+        #master = Frame(self.parent, name='master')
+        master = Frame(name='master')
         master.pack(fill=BOTH,expand=True)
         self.notebook = Notebook(master, name='nb')
         self.notebook.pack(fill=BOTH,expand=True)
