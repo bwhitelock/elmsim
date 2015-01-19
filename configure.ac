@@ -7,7 +7,7 @@ AM_PATH_PYTHON([2.5])
 
 AM_CHECK_PYMOD(serial,,,[AC_MSG_ERROR(Please install the pyserial module)])
 
-AC_CONFIG_FILES([Makefile src/Makefile src/elmDevice/Makefile src/tkinter/Makefile src/wxpython/Makefile])
+AC_CONFIG_FILES([Makefile src/Makefile src/elmDevice/Makefile src/tkinter/Makefile src/wxpython/Makefile src/includes/Makefile])
 
 AS_AC_EXPAND(PYTHONDIR, $pythondir)
 AS_AC_EXPAND(ELMSIMDIR, $pythondir/$PACKAGE)

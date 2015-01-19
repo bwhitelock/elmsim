@@ -1,4 +1,4 @@
-SUBDIRS = elmDevice tkinter wxpython
+SUBDIRS = elmDevice tkinter wxpython includes
 
 bin_SCRIPTS = elmsim
 CLEANFILES = $(bin_SCRIPTS) commandLineParse.pyc __init__.pyc
@@ -12,6 +12,7 @@ uninstall-hook:
 	if test -d ${ELMSIMDIR}/elmDevice; then rmdir ${ELMSIMDIR}/elmDevice; fi
 	if test -d ${ELMSIMDIR}/tkinter; then rmdir ${ELMSIMDIR}/tkinter; fi
 	if test -d ${ELMSIMDIR}/wxpython; then rmdir ${ELMSIMDIR}/wxpython; fi
+	if test -d ${ELMSIMDIR}/includes; then rmdir ${ELMSIMDIR}/includes; fi
 	if test -d ${ELMSIMDIR}; then rmdir ${ELMSIMDIR}; fi
 
 do_substitution = sed -e 's,[@]pythondir[@],$(pythondir),g' \

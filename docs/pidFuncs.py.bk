@@ -1,0 +1,560 @@
+def  modeFunc_00(parent,numBytes,minValue,maxValue,data):
+    print "modeFunc_00"
+    return "FFFFFFFF"
+
+def  modeFunc_01(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_02(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_03(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_04(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_05(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_06(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_07(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_08(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_09(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_0A(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_0B(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_0C(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+    print "modeFunc_0C"
+
+def  modeFunc_0D(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_0E(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_0F(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_10(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_11(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_12(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_13(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_14(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_15(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_16(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_17(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_18(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_19(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_1A(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_1B(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_1C(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_1D(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_1E(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_1F(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_20(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_21(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_22(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_23(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_24(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_25(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_26(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_27(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_28(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_29(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_2A(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_2B(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_2C(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_2D(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_2E(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_2F(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_30(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_31(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_32(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_33(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_34(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_35(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_36(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_37(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_38(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_39(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_3A(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_3B(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_3C(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_3D(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_3E(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_3F(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_40(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_41(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_42(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_43(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_44(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_45(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_46(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_47(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_48(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_49(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_4A(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_4B(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_4C(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_4D(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_4E(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_4F(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_50(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_51(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_52(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_53(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_54(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_55(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_56(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_57(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_58(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_59(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_5A(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_5B(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_5C(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_5D(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_5E(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_5F(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_60(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_61(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_62(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_63(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_64(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_65(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_66(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_67(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_68(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_69(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_6A(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_6B(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_6C(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_6D(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_6E(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_6F(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_70(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_71(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_72(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_73(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_74(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_75(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_76(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_77(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_78(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_79(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_7A(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_7B(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_7C(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_7D(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_7E(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_7F(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_80(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_81(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_82(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_83(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_84(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_85(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_86(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_87(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_A0(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_C0(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_C3(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
+
+def  modeFunc_C4(parent,numBytes,minValue,maxValue,data):
+    print "OK"
+    return "OK"
