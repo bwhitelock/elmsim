@@ -4,10 +4,6 @@ from threading import Thread
 #import pty
 import os, sys, select
 import time
-#from atType1 import atType1
-#from atType2 import atType2
-#from atType3 import atType3
-#from atType4 import atType4
 from includes.atCommands import atCommands
 from includes.modeConsts import modeConsts
 from includes.mainPIDs import mainPIDs
@@ -32,12 +28,7 @@ class openPort(Thread):
         self.parent.putData(source)
         dataSource = ""
         lastLine = ""
-        #ser.echo(False)
-        #while True:
-        #os.write(self.master,'>')
-        #os.write(self.master,'ELM327 v2.0')
         while not self.exit.is_set():
-            #time.sleep(0.25)
             print "openPort loop"
             try:
                 data = ''
@@ -52,7 +43,6 @@ class openPort(Thread):
                             dataSource=''.join(lastLine)
                             repeatLast=True
                     else:
-                        #print "data :",data
                         dataSource += data
                     if self.echo:
                         os.write(self.master,data)
@@ -68,22 +58,6 @@ class openPort(Thread):
                         os.write(self.master,'\r')
                 if len(dataSource) > 1: #There are no commands less than 2
                     response=self.processPortData(dataSource)
-                    #dataSource = dataSource.upper()
-                    #print "dataSource upper",dataSource
-                    #dataSource = dataSource.replace(' ','')
-                    #if dataSource[:2] == 'AT':
-                        #print "at command"
-                        ##response=self.atcmd(dataSource)
-                        #if atType1.get(dataSource):
-                            #print "using dict call",atType1[dataSource]
-                            #response=atType1[dataSource]()
-                            ##response=ResetAll()
-                            #print "dict response",response
-                    #elif dataSource[:2] == '01': #Mode 1
-                        #response='FFFFFFFF'
-                    #elif dataSource[:2] == '02': #Mode 2
-                        #response='FFFFFFFF'
-                        ##print "using dict call",mode1[dataSource[2:3]]
 
                 if not response == '':
                     if self.echo:
@@ -120,22 +94,6 @@ class openPort(Thread):
             return "OK"
         if data[:2] == 'AT':
             print "at command"
-            #if atType1.get(data): #check for basic commands first
-                #print "using dict call",atType1[data]
-                #response=atType1[data](self)
-                #print "dict response",response
-            #elif atType2.get(data[:4]): #check for basic commands first
-                #print "using dict call",atType2[data[:4]]
-                #response=atType2[data[:4]](self)
-                #print "dict response",response
-            #elif atType3.get(data[:5]): #check for basic commands first
-                #print "using dict call",atType3[data[:5]]
-                #response=atType3[data[:5]](self)
-                #print "dict response",response
-            #elif atType4.get(data[:6]): #check for basic commands first
-                #print "using dict call",atType4[data[:6]]
-                #response=atType4[data[:6]](self)
-                #print "dict response",response
             if atCommands.get(data[:6]):
                 print "using dict call",atCommands[data[:6]]
                 response=atCommands[data[:6]](self)
@@ -157,21 +115,31 @@ class openPort(Thread):
                 response=atCommands[data](self)
                 print "dict response",response
         elif data[:2] == '01': #Mode 01
-            #response='FFFFFFFF'
             pid = data[2:4]
             print "pid",pid
             if not (mainPIDs.get(pid) == None):
                 consts = modeConsts()
                 print "consts",consts
-                numBytes = mainPIDs[pid][consts.numBytes]
-                print "numBytes",numBytes
+                pidMode = 1
+                print "pidMode",pidMode
                 minVal = mainPIDs[pid][consts.minValue]
                 print "minVal",minVal
                 maxVal = mainPIDs[pid][consts.maxValue]
                 print "maxVal",maxVal
-                response=mainPIDs[pid][consts.funcCall](self,numBytes,minVal,maxVal,data[5:])
+                response=mainPIDs[pid][consts.funcCall](self,pidMode,minVal,maxVal,data)
         elif data[:2] == '02': #Mode 02
-            response='FFFFFFFF'
+            pid = data[2:4]
+            print "pid",pid
+            if not (mainPIDs.get(pid) == None):
+                consts = modeConsts()
+                print "consts",consts
+                pidMode = 2
+                print "pidMode",pidMode
+                minVal = mainPIDs[pid][consts.minValue]
+                print "minVal",minVal
+                maxVal = mainPIDs[pid][consts.maxValue]
+                print "maxVal",maxVal
+                response=mainPIDs[pid][consts.funcCall](self,pidMode,minVal,maxVal,data)
         elif data[:2] == '05': #Mode 05
             response='OK'
         elif data[:2] == '06': #Mode 06

@@ -1,8 +1,7 @@
 class modeConsts(object):
-    numBytes = 0
-    minValue = 1
-    maxValue = 2
-    funcCall = 3
+    minValue = 0
+    maxValue = 1
+    funcCall = 2
 
     def __setattr__(self, *_):
         pass
