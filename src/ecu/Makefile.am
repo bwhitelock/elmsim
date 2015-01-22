@@ -4,7 +4,7 @@ elmsim_PYTHON = mainPIDs.py\
                 ecu.py\
                 __init__.py 
 
-elmsimdir = $(ELMSIMDIR)/engineControlUnits
+elmsimdir = $(ELMSIMDIR)/ecu
 
 CLEANFILES = mainPIDs.pyc\
              modeConsts.pyc\

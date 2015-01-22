@@ -1,4 +1,4 @@
-SUBDIRS = elmDevice tkinter wxpython engineControlUnits
+SUBDIRS = elmDevice tkinter wxpython ecu
 
 bin_SCRIPTS = elmsim
 CLEANFILES = $(bin_SCRIPTS) commandLineParse.pyc __init__.pyc
@@ -12,7 +12,7 @@ uninstall-hook:
 	if test -d ${ELMSIMDIR}/elmDevice; then rmdir ${ELMSIMDIR}/elmDevice; fi
 	if test -d ${ELMSIMDIR}/tkinter; then rmdir ${ELMSIMDIR}/tkinter; fi
 	if test -d ${ELMSIMDIR}/wxpython; then rmdir ${ELMSIMDIR}/wxpython; fi
-	if test -d ${ELMSIMDIR}/engineControlUnits; then rmdir ${ELMSIMDIR}/engineControlUnits; fi
+	if test -d ${ELMSIMDIR}/ecu; then rmdir ${ELMSIMDIR}/ecu; fi
 	if test -d ${ELMSIMDIR}; then rmdir ${ELMSIMDIR}; fi
 
 do_substitution = sed -e 's,[@]pythondir[@],$(pythondir),g' \

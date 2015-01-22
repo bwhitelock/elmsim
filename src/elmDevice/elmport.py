@@ -7,7 +7,7 @@ import time
 #from atCommands import atCommands
 #from includes.modeConsts import modeConsts
 #from includes.mainPIDs import mainPIDs
-#from engineControlUnits.ecu import ecu
+#from ecu.ecu import ecu
 
 
 class openPort(Thread):

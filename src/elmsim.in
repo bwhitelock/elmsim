@@ -8,7 +8,7 @@ from multiprocessing import Queue
 sys.path.insert(1, '@ELMSIMDIR@')
 
 from commandLineParse import *
-from engineControlUnits.ecu import ecu
+from ecu.ecu import ecu
 #import commandLineParse
 
 thisQueue=Queue()

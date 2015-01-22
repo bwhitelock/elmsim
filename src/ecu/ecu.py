@@ -1,7 +1,7 @@
 #from multiprocessing import Process, Queue
 from modeConsts import modeConsts
 from mainPIDs import mainPIDs
-from engineControlUnits.ecuData import ecuData
+from ecu.ecuData import ecuData
 
 class ecu(object):
     #def __init__ (self,parent):

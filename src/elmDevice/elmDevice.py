@@ -5,8 +5,8 @@ from elmport import openPort
 #import pty
 import os
 import time
-from engineControlUnits.ecu import ecu
-from engineControlUnits.ecuData import ecuData
+from ecu.ecu import ecu
+from ecu.ecuData import ecuData
 from atCommands import atCommands
 
 class elmDevice (multiprocessing.Process):
