@@ -1,4 +1,5 @@
 from random import randrange as rand
+import random
 
 def randomBytes1():
     #print "randomBytes1"
@@ -57,8 +58,8 @@ def modeFunc_02(parent,pidMode,minValue,maxValue,data):
 
 def modeFunc_03(parent,pidMode,minValue,maxValue,data):
     #print "modeFunc_03"
-    response = '02' #simulate closed loop O2 normal feedback
-    #response = "%s%s%s" % ((40+pidMode),'03', response)
+    #response = '02' #simulate closed loop O2 normal feedback
+    response = "%02X" % random.choice([1,2,4,8,16])
     response = "%s%s%s" % ((40+pidMode),data[2:4], response)
     return response
 
@@ -137,23 +138,33 @@ def modeFunc_0D(parent,pidMode,minValue,maxValue,data):
 
 def modeFunc_0E(parent,pidMode,minValue,maxValue,data):
     print "modeFunc_0E"
-    return "OK"
+    response = randomBytes1()
+    response = "%s%s%s" % ((40+pidMode),data[2:4], response)
+    return response
 
 def modeFunc_0F(parent,pidMode,minValue,maxValue,data):
     print "modeFunc_0F"
-    return "OK"
+    response = randomBytes1()
+    response = "%s%s%s" % ((40+pidMode),data[2:4], response)
+    return response
 
 def modeFunc_10(parent,pidMode,minValue,maxValue,data):
     print "modeFunc_10"
-    return "OK"
+    response = randomBytes2()
+    response = "%s%s%s" % ((40+pidMode),data[2:4], response)
+    return response
 
 def modeFunc_11(parent,pidMode,minValue,maxValue,data):
     print "modeFunc_11"
-    return "OK"
+    response = randomBytes1()
+    response = "%s%s%s" % ((40+pidMode),data[2:4], response)
+    return response
 
 def modeFunc_12(parent,pidMode,minValue,maxValue,data):
     print "modeFunc_12"
-    return "OK"
+    response = "%02X" % random.choice([1,2,4,8])
+    response = "%s%s%s" % ((40+pidMode),data[2:4], response)
+    return response
 
 def modeFunc_13(parent,pidMode,minValue,maxValue,data):
     print "modeFunc_13"
