@@ -1,10 +1,10 @@
-elmsim_PYTHON = elmsim_tk.py\
+tkinter_PYTHON = elmsim_tk.py\
                 engineTab.py\
                 testTab1.py\
                 testTab2.py\ 
                 __init__.py
 
-elmsimdir = $(ELMSIMDIR)/tkinter
+tkinterdir = $(ELMSIMDIR)/tkinter
 
 CLEANFILES = elmsim_tk.pyc\
              engineTab.pyc\

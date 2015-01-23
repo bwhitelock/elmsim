@@ -114,22 +114,24 @@ def modeFunc_0B(parent,pidMode,minValue,maxValue,data):
     return response
 
 def modeFunc_0C(parent,pidMode,minValue,maxValue,data):
-    print "modeFunc_0C"
+    #print "modeFunc_0C"
     if parent.ecuData.random:
         response = randomBytes2()
     else:
         response = "%04X" % int(parent.ecuData.rpm)
-    print response
+    #print response
     response = "%s%s%s" % ((40+pidMode),data[2:4], response)
     return response
 
 def modeFunc_0D(parent,pidMode,minValue,maxValue,data):
-    print "modeFunc_0D"
+    #print "modeFunc_0D"
+    #print "modeFunc_0D random",parent.ecuData.random
+    #print "modeFunc_0D speed",parent.ecuData.speed
     if parent.ecuData.random:
         response = randomBytes1()
     else:
         response = "%02X" % int(parent.ecuData.speed)
-    print response
+    #print response
     response = "%s%s%s" % ((40+pidMode),data[2:4], response)
     return response
 

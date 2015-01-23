@@ -1,6 +1,6 @@
-elmsim_PYTHON = elmsim_wx.py __init__.py 
+wxpython_PYTHON = elmsim_wx.py __init__.py 
 
-elmsimdir = $(ELMSIMDIR)/wxpython
+wxpythondir = $(ELMSIMDIR)/wxpython
 
 CLEANFILES = elmsim_wx.pyc __init__.pyc 
 

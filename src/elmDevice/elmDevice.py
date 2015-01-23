@@ -1,13 +1,12 @@
-#from multiprocessing import Process, Queue
 import multiprocessing, Queue
 from threading import Thread
 from elmport import openPort
-#import pty
 import os
 import time
 from ecu.ecu import ecu
 from ecu.ecuData import ecuData
 from atCommands import atCommands
+from deviceCommands import deviceCommands
 
 class elmDevice (multiprocessing.Process):
     def __init__(self,queue):
@@ -37,25 +36,8 @@ class elmDevice (multiprocessing.Process):
                 self.data=contents[1]
                 print "cmd contents",self.cmd
                 print "data contents",self.data
-                if self.cmd == 'setSpeed':
-                    self.ecu.setSpeed(self.data)
-                elif self.cmd == 'setRPM':
-                    self.ecu.setRPM(self.data)
-                elif self.cmd == 'setRandom':
-                    self.ecu.setRandom(self.data)
-                elif self.cmd == 'pidCmd':
-                    print 'pidCmd received',self.data
-                    response = self.ecu.getEcuResponse(self.data)
-                    print "ecu response is",response
-                    self.portQueue.put(response)
-                elif self.cmd == 'atCmd':
-                    print 'atCmd received',self.data
-                    response = self.atCmd(self.data)
-                    print "ecu response is",response
-                    self.portQueue.put(response)
-                elif self.cmd == 'port':
-                    guiData=[self.cmd,self.data]
-                    self.guiQueue.put(guiData)
+                if deviceCommands.get(self.cmd):
+                    deviceCommands[self.cmd](self,self.data)
             except Queue.Empty:
                 time.sleep(1)
 
@@ -73,30 +55,3 @@ class elmDevice (multiprocessing.Process):
     def listen(self):
         self.elmPort.start()
         self.listening.set()
-
-    def atCmd(self,data):
-        print "at command"
-        response = '?'
-        if atCommands.get(data[:6]):
-            print "using dict call",atCommands[data[:6]]
-            response=atCommands[data[:6]](self)
-            print "dict response",response
-        elif atCommands.get(data[:5]):
-            print "using dict call",atCommands[data[:5]]
-            response=atCommands[data[:5]](self)
-            print "dict response",response
-        elif atCommands.get(data[:4]):
-            print "using dict call",atCommands[data[:4]]
-            response=atCommands[data[:4]](self)
-            print "dict response",response
-        elif atCommands.get(data[:3]):
-            print "using dict call",atCommands[data[:3]]
-            response=atCommands[data[:3]](self)
-            print "dict response",response
-        elif atCommands.get(data):
-            print "using dict call",atCommands[data]
-            response=atCommands[data](self)
-            print "dict response",response
-
-        return response
-

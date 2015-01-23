@@ -28,7 +28,7 @@ class openPort(Thread):
 
     def run(self):
         print "starting openPort"
-        source = ['port',self.s_name]
+        source = ['elmPort',self.s_name]
         self.parent.putData(source)
         dataSource = ""
         lastLine = ""

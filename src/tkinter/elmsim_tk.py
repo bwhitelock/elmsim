@@ -44,7 +44,7 @@ class simpleapp_tk(Tkinter.Tk):
         try:
             content=self.returnQueue.get_nowait()
             print "return contents:",content
-            if content[0] == 'port':
+            if content[0] == 'elmPort':
                 self.testTab2.labelVariable.set(content[1])
         except Queue.Empty:
             pass
