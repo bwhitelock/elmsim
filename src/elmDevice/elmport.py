@@ -68,6 +68,15 @@ class openPort(Thread):
                         print "at command loaded"
                         source = ['atCmd',dataSource]
                     else:
+                        if (dataSource[:2] == '01') or (dataSource[:2] == '02'):
+                            print "mode 1 or 2"
+                            print "dataSource[3:3]",int(dataSource[2:3])%2
+                            if (int(dataSource[2:3])%2 == 0) and (dataSource[3:4] == '0'):
+                                print "pid search command"
+                                response = "%s Searching...\r"%dataSource[0:4]
+                                os.write(self.master, response)
+                                response = '?'
+                        #os.write(self.master, " Searching...\r")
                         print "pid command loaded"
                         source = ['pidCmd',dataSource]
                     #response=self.processPortData(dataSource)
