@@ -126,8 +126,6 @@ def modeFunc_0C(parent,pidMode,minValue,maxValue,data):
 
 def modeFunc_0D(parent,pidMode,minValue,maxValue,data):
     #print "modeFunc_0D"
-    #print "modeFunc_0D random",parent.ecuData.random
-    #print "modeFunc_0D speed",parent.ecuData.speed
     if parent.ecuData.random:
         response = randomBytes1()
     else:
@@ -168,55 +166,110 @@ def modeFunc_12(parent,pidMode,minValue,maxValue,data):
 
 def modeFunc_13(parent,pidMode,minValue,maxValue,data):
     print "modeFunc_13"
-    return "OK"
+    b1 = parent.ecuData.o2Bank1
+    o2sensors = (b1[0]*1) + (b1[1]*2) + (b1[2]*4) + (b1[3]*8)
+    b2 = parent.ecuData.o2Bank2
+    o2sensors = o2sensors + (b2[0]*16) + (b2[1]*32) + (b2[2]*64) + (b2[3]*128)
+    response = "%04X" % o2sensors
+    response = "%s%s%s" % ((40+pidMode),data[2:4], response)
+    return response
 
 def modeFunc_14(parent,pidMode,minValue,maxValue,data):
     print "modeFunc_14"
-    return "OK"
+    sensorValue = (rand(0,255)*parent.ecuData.o2Bank1[0])
+    sensorValue = sensorValue + (rand(0,255)*parent.ecuData.o2Bank1[0]*256)
+    response = "%04X" % sensorValue
+    response = "%s%s%s" % ((40+pidMode),data[2:4], response)
+    return response
 
 def modeFunc_15(parent,pidMode,minValue,maxValue,data):
     print "modeFunc_15"
-    return "OK"
+    sensorValue = (rand(0,255)*parent.ecuData.o2Bank1[1])
+    sensorValue = sensorValue + (rand(0,255)*parent.ecuData.o2Bank1[1]*256)
+    response = "%04X" % sensorValue
+    response = "%s%s%s" % ((40+pidMode),data[2:4], response)
+    return response
 
 def modeFunc_16(parent,pidMode,minValue,maxValue,data):
     print "modeFunc_16"
-    return "OK"
+    sensorValue = (rand(0,255)*parent.ecuData.o2Bank1[2])
+    sensorValue = sensorValue + (rand(0,255)*parent.ecuData.o2Bank1[2]*256)
+    response = "%04X" % sensorValue
+    response = "%s%s%s" % ((40+pidMode),data[2:4], response)
+    return response
 
 def modeFunc_17(parent,pidMode,minValue,maxValue,data):
     print "modeFunc_17"
-    return "OK"
+    sensorValue = (rand(0,255)*parent.ecuData.o2Bank1[3])
+    sensorValue = sensorValue + (rand(0,255)*parent.ecuData.o2Bank1[3]*256)
+    response = "%04X" % sensorValue
+    response = "%s%s%s" % ((40+pidMode),data[2:4], response)
+    return response
 
 def modeFunc_18(parent,pidMode,minValue,maxValue,data):
     print "modeFunc_18"
-    return "OK"
+    sensorValue = (rand(0,255)*parent.ecuData.o2Bank2[0])
+    sensorValue = sensorValue + (rand(0,255)*parent.ecuData.o2Bank2[0]*256)
+    response = "%04X" % sensorValue
+    response = "%s%s%s" % ((40+pidMode),data[2:4], response)
+    return response
 
 def modeFunc_19(parent,pidMode,minValue,maxValue,data):
     print "modeFunc_19"
-    return "OK"
+    sensorValue = (rand(0,255)*parent.ecuData.o2Bank2[1])
+    sensorValue = sensorValue + (rand(0,255)*parent.ecuData.o2Bank2[1]*256)
+    response = "%04X" % sensorValue
+    response = "%s%s%s" % ((40+pidMode),data[2:4], response)
+    return response
 
 def modeFunc_1A(parent,pidMode,minValue,maxValue,data):
     print "modeFunc_1A"
-    return "OK"
+    sensorValue = (rand(0,255)*parent.ecuData.o2Bank2[2])
+    sensorValue = sensorValue + (rand(0,255)*parent.ecuData.o2Bank2[2]*256)
+    response = "%04X" % sensorValue
+    response = "%s%s%s" % ((40+pidMode),data[2:4], response)
+    return response
 
 def modeFunc_1B(parent,pidMode,minValue,maxValue,data):
     print "modeFunc_1B"
-    return "OK"
+    sensorValue = (rand(0,255)*parent.ecuData.o2Bank2[3])
+    sensorValue = sensorValue + (rand(0,255)*parent.ecuData.o2Bank2[3]*256)
+    response = "%04X" % sensorValue
+    response = "%s%s%s" % ((40+pidMode),data[2:4], response)
+    return response
 
 def modeFunc_1C(parent,pidMode,minValue,maxValue,data):
     print "modeFunc_1C"
-    return "OK"
+    response = "%02X" % rand(1,13)
+    response = "%s%s%s" % ((40+pidMode),data[2:4], response)
+    return response
 
 def modeFunc_1D(parent,pidMode,minValue,maxValue,data):
     print "modeFunc_1D"
-    return "OK"
+    bank = parent.ecuData.o2Bank1
+    o2sensors = (bank[0]*1) + (bank[1]*2)
+    bank = parent.ecuData.o2Bank2
+    o2sensors = o2sensors + (bank[0]*4) + (bank[1]*8)
+    bank = parent.ecuData.o2Bank3
+    o2sensors = o2sensors + (bank[0]*16) + (bank[1]*32)
+    bank = parent.ecuData.o2Bank4
+    o2sensors = o2sensors + (bank[0]*64) + (bank[1]*128)
+    response = "%04X" % o2sensors
+    response = "%s%s%s" % ((40+pidMode),data[2:4], response)
+    return response
 
 def modeFunc_1E(parent,pidMode,minValue,maxValue,data):
     print "modeFunc_1E"
+    response = "%04X" % 0
+    response = "%s%s%s" % ((40+pidMode),data[2:4], response)
+    return response
     return "OK"
 
 def modeFunc_1F(parent,pidMode,minValue,maxValue,data):
     print "modeFunc_1F"
-    return "OK"
+    response = randomBytes2()
+    response = "%s%s%s" % ((40+pidMode),data[2:4], response)
+    return response
 
 def modeFunc_20(parent,pidMode,minValue,maxValue,data):
     print "modeFunc_20"
